@@ -5,10 +5,12 @@ from . import views
 #urlpatterns:
 #path(route, view, name)
 urlpatterns = [
+    # path('sizenew/', include())
     # ex: /polls/
     path('', views.index, name='index'),
     # ex: /polls/5/
     path('<int:question_id>/', views.detail, name='detail'),
+    path('sizenew/<int:size_id>/', views.sizepage, name='sizepage'),
     # ex: /polls/5/results/
     path('<int:question_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/
