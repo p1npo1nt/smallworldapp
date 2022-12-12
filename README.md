@@ -14,12 +14,11 @@ Getting started: If you are a seller, simply sign up on the Small World app/webs
 Customer quote:
 
 “Small World helped me sell knit clothing from the comforts of my home. Through my Small World Storefront, I was able to view my income, manage my inventory, communicate with customers, and streamline the selling process as a whole. I also loved that you could add multiple locations so that I could sell from all different points of the city. The overall simplicity and user-friendliness of Small World guarantees that I will use this product for the foreseeable future.”
-									— Kendra
+									— Kendra,
 									     Seller on Small World
 
 
 FAQ
-Small World: Selling Made Simple
 
 Q: What is the development plan for this project?
 A: We currently aim to start with a website. Once the website is stable, we plan to expand to mobile apps.
