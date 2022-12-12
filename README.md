@@ -1,3 +1,3 @@
 # Small World App #
 
-Version 1.1
+Alpha 0.1
