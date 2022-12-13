@@ -55,7 +55,7 @@ def sizepage_detail(request, size_id):
 
     
 def testpage(request):
-    return render(request, 'rarni1/index.html')
+    return render(request, 'rarni/index.html')
 
 
 
