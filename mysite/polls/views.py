@@ -17,31 +17,6 @@ def index(request):
     } 
     return HttpResponse(template.render(context, request))
 
-def sizepage(request):
-    # try:
-    #     size = PpSize.objects.get(pk=size_id)
-    # except PpSize.DoesNotExist:
-    #     raise Http404("404: This size does not exist")
-    #     return render(request, 'polls/sizenew/sizepage.html')
-    # return render (request, 'polls/sizenew/sizepage.html', {'size': size})
-    # return HttpResponse("You are looking at size number %s." % size_id)
-    latest_size_answers = PpSize.objects.all()
-    template = loader.get_template('sizenew/index.html')
-    context = {
-        'latest_size_answers': latest_size_answers,
-    }
-    return HttpResponse(template.render(context, request))
-
-def sizepage_detail(request, size_id):
-    try:
-        size = PpSize.objects.get(pk=size_id)
-
-    except PpSize.DoesNotExist:
-        raise Http404("404: This size does not exist")
-        return render(request,'sizenew/detail.html')
-    return render(request, 'sizenew/detail.html', {'size': size})
-    return HttpReponse("You're looking at the results of size number %s." % size_id)
-
 def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
@@ -57,6 +32,28 @@ def results(request, question_id):
 
 def vote(request, question_id):
     return HttpResponse("You are voting on question %s." % question_id)
+#
+#
+#
+#
+def sizepage(request):
+    latest_size_answers = PpSize.objects.all()
+    context = {
+        'latest_size_answers': latest_size_answers,
+    }
+    return render(request, 'sizenew/index.html', context)
+
+def sizepage_detail(request, size_id):
+    try:
+        size = PpSize.objects.get(pk=size_id)
+
+    except PpSize.DoesNotExist:
+        raise Http404("404: This size does not exist")
+        return render(request,'sizenew/detail.html')
+    return render(request, 'sizenew/detail.html', {'size': size})
+    return HttpReponse("You're looking at the results of size number %s." % size_id)
+
+
 
 
 

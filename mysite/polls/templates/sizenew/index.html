@@ -1,7 +1,7 @@
-{% if latest_size_answers %}
+{% if latest_size_answers %} <!-- if there are size values -->
     <ul>
-    {% for size in latest_size_answers %}
-        <li><a  href="{{ size.id }}/">{{ size.size_enter }}</a></li>
+    {% for size in latest_size_answers %} <!-- for every value in the list of size values -->
+        <li><a  href="{{ size.id }}/">size number {{ size.id }}</a></li> <!-- create a link siznew/size_id -->
     {% endfor %}
     </ul>
 {% else %}
