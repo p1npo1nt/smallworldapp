@@ -53,7 +53,9 @@ def sizepage_detail(request, size_id):
     return render(request, 'sizenew/detail.html', {'size': size})
     return HttpReponse("You're looking at the results of size number %s." % size_id)
 
-
+    
+def testpage(request):
+    return render(request, 'rarni1/index.html')
 
 
 
