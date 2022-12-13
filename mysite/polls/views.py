@@ -32,6 +32,15 @@ def sizepage(request):
     }
     return HttpResponse(template.render(context, request))
 
+def sizepage_detail(request, size_id):
+    try:
+        size = PpSize.objects.get(pk=size_id)
+
+    except PpSize.DoesNotExist:
+        raise Http404("404: This size does not exist")
+        return render(request,'sizenew/detail.html')
+    return render(request, 'sizenew/detail.html', {'size': size})
+    return HttpReponse("You're looking at the results of size number %s." % size_id)
 
 def detail(request, question_id):
     try:

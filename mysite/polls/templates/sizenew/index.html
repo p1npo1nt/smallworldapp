@@ -1,9 +1,9 @@
-(% if latest_size_answers %}
-<ul>
-{% for size in latest_size_answers %}
-    <li><a  href="sizenew/{{ size.id }}/">{{ size.size_enter }}</a></li>
-{% endfor %}
-</ul>
+{% if latest_size_answers %}
+    <ul>
+    {% for size in latest_size_answers %}
+        <li><a  href="{{ size.id }}/">{{ size.size_enter }}</a></li>
+    {% endfor %}
+    </ul>
 {% else %}
-<p>No size here.</p>
+    <p>No size here.</p>
 {% endif %}
