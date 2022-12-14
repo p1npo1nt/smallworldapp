@@ -3,7 +3,8 @@ from django.http import Http404
 from django.template import loader
 from django.shortcuts import render
 from .models import Question, PpSize, ToDoList
-from .forms import createNewList
+from .forms import UserForm
+from django.utils import timezone
 
 #here we have 4 views: index, detail, results, and vote
 
@@ -57,25 +58,22 @@ def sizepage_detail(request, size_id):
 def testpage(request):
     return render(request, 'rarni/index.html')
 
-def create(response):
-    if response.method == "POST":
-        form = createNewList(response.POST)
 
-        if form.is_valid():
-            n = form.cleaned_data["name"]
-            t = ToDoList(name=n)
-            t.save()
+def index(request):
+    submitbutton= request.POST.get("submit")
 
-        return HttpResponseRedirect("/%i" %t.id)
+    firstname=''
+    lastname=''
+    emailvalue=''
 
-    else:
-        form = createNewList()
-
-    return render(response, "rarni/form.html", {"form":form})
-
-def index(response, id):
-	ls = ToDoList.objects.get(id=id)
-	return render(response, "rarni/list.html", {"ls":ls})
+    form= UserForm(request.POST or None)
+    if form.is_valid():
+        firstname= form.cleaned_data.get("first_name")
+        lastname= form.cleaned_data.get("last_name")
+        emailvalue= form.cleaned_data.get("email")
 
 
-
+    context= {'form': form, 'firstname': firstname, 'lastname':lastname,
+              'submitbutton': submitbutton, 'emailvalue':emailvalue}
+        
+    return render(request, 'rarni/form.html', context)
