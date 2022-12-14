@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load static %}
 <html>
     <head>
         <meta charset="utf-8">
@@ -10,7 +11,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" type="text/css" href= "{% static 'assets/images/form.css' %}"
     </head>
     <body>
         <h3>User form</h3>
@@ -18,7 +19,8 @@
         <form action="" method = "post">
             {%csrf_token%} <!--Creates a CSRF Token needed for the form to function-->
             {{form}} <!--Takes the Form Variable from views.py-->
-            <input type="submit">
+            <input style= "text-align: left;"type="submit">
+            <p id = 'sus'>{{confirm}}<p>
         </form>
     </body>
 </html>
