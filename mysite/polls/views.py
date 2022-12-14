@@ -1,9 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404 
 from django.template import loader
 from django.shortcuts import render
-
-from .models import Question, PpSize
+from .models import Question, PpSize, ToDoList
+from .forms import createNewList
 
 #here we have 4 views: index, detail, results, and vote
 
@@ -57,6 +57,25 @@ def sizepage_detail(request, size_id):
 def testpage(request):
     return render(request, 'rarni/index.html')
 
+def create(response):
+    if response.method == "POST":
+        form = createNewList(response.POST)
+
+        if form.is_valid():
+            n = form.cleaned_data["name"]
+            t = ToDoList(name=n)
+            t.save()
+
+        return HttpResponseRedirect("/%i" %t.id)
+
+    else:
+        form = createNewList()
+
+    return render(response, "rarni/form.html", {"form":form})
+
+def index(response, id):
+	ls = ToDoList.objects.get(id=id)
+	return render(response, "rarni/list.html", {"ls":ls})
 
 
 

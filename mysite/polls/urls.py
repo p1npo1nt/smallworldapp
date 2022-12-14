@@ -6,6 +6,9 @@ from . import views
 #path(route, view, name)
 urlpatterns = [
     path('rarni/', views.testpage, name='rarniview'),
+    path("rarni/<int:id>", views.index, name="index"),
+    path("rarni/create/", views.create, name="index"),
+    path("rarni/<int:id>", views.index, name="index"),
     # path('sizenew/', include())
     # ex: /polls/
     path('', views.index, name='index'),
