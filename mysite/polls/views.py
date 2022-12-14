@@ -3,9 +3,9 @@ from django.http import Http404
 from django.template import loader
 from django.shortcuts import render
 
-from .models import Question, PpSize
+from .models import Question, PpSize, FALN
 
-#here we have 4 views: index, detail, results, and vote
+
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -58,5 +58,7 @@ def testpage(request):
     return render(request, 'rarni/index.html')
 
 
-
+def nametemplateindex(request):
+    latest_name_answers = FALN.objects.all() 
+    #continue this later
 
