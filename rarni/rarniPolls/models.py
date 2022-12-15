@@ -6,3 +6,9 @@ class User(models.Model):
 
     def __str__(self):
         return self.name + " " + self.email #returns its values
+
+class Email(models.Model):
+    email = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.email
