@@ -18,6 +18,8 @@ from django.urls import path
 from django.urls import path, include #new
 from django.views.generic.base import TemplateView
 
+# ok this is a test comment 
+
 #  Django by default will look within a templates folder called registration for auth templates
 urlpatterns = [
     path('admin/', admin.site.urls),
