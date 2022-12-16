@@ -540,8 +540,32 @@ h6,
     color: var(--primary);
 }
 
-#top, #top2, #top3{
+#top{
     position: relative;
-    top: -120px; /* This will move it 20px up */
-    left: -140px; /* This will move it 20px to the right */
+    size: relative;
+    font-size: 420%;
+    top: -45%;  
+    left: -5%
+}
+
+
+#top2{
+    position: relative;
+    size: relative;
+    font-size: 320%;
+    top: -45%;  
+    left: -5%
+    
+}
+
+#top3{
+    position: relative;
+    top: -45%; 
+    left: -5%
+}
+
+.header-thing {
+    display: flex;
+    background-color: DodgerBlue;
+  
 }
