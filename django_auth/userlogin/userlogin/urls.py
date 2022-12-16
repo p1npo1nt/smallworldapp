@@ -23,6 +23,7 @@ from django.views.generic.base import TemplateView
 #  Django by default will look within a templates folder called registration for auth templates
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')), 
     path('accounts/', include('django.contrib.auth.urls')), #new
     path('', TemplateView.as_view(template_name='home.html'), name='home') # home page view
 ]
