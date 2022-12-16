@@ -539,3 +539,9 @@ h6,
 .copyright a:hover {
     color: var(--primary);
 }
+
+#top, #top2, #top3{
+    position: relative;
+    top: -120px; /* This will move it 20px up */
+    left: -140px; /* This will move it 20px to the right */
+}
