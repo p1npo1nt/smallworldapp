@@ -539,3 +539,33 @@ h6,
 .copyright a:hover {
     color: var(--primary);
 }
+
+#top{
+    position: relative;
+    size: relative;
+    font-size: 420%;
+    top: -45%;  
+    left: -5%
+}
+
+
+#top2{
+    position: relative;
+    size: relative;
+    font-size: 320%;
+    top: -45%;  
+    left: -5%
+    
+}
+
+#top3{
+    position: relative;
+    top: -45%; 
+    left: -5%
+}
+
+.header-thing {
+    display: flex;
+    background-color: DodgerBlue;
+  
+}
