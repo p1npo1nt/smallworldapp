@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.testpage, name='rarniview'),
     path('forms/', views.rendform, name='formview'),
     path('ip/', views.getIP, name="ipGet")
+    
 ]
