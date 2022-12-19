@@ -14,11 +14,6 @@
     bottom: 30px;
     z-index: 99;
 }
-
-h1,
-.h1,
-h2,
-.h2,
 .fw-bold {
     font-weight: 700 !important;
 }
@@ -362,7 +357,13 @@ h6,
 /*** Team ***/
 .team-item {
     position: relative;
+    transition: transform .2s;
     padding: 4rem 0;
+
+}
+
+.team-item:hover{
+    transform:scale(1.5);
 }
 
 .team-item img {

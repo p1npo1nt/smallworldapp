@@ -1,0 +1,21 @@
+section {
+    height: 150px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid red;
+  }
+  
+  div {
+    flex: 1;
+    height: 100px;
+    border: 2px solid black;  
+    transition: flex .2s, transform .2s;
+    margin: 1em;
+  }
+  
+  div.active {
+    transform: scaleY(1.5);
+    flex: 2;
+  }
